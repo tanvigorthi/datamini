@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Analysis and Deployment Systems </title>
+</head>
+<h2> How We Structure Analysis and Deployment </h2>
+<a href="index.html" <h4> Home </h4> </a>
+<body>
+<h3> Process of Analysis and Deployment </h3>
+<p> The data is tagged by type. This allows us to wade through data more effectively, ensuring that all data is of the same type, sorted into appropriate bins, and that any data that is necessary can be easily found. This helps reduce time spent on initiating strategies for organization. All incoming data is tagged in the same way, so the system remains consistent. This way we can remove multiples as well as unused/ redundant data.</p>
+<a href="schema.html" > Find detailed schema for the implementation of analysis and deployment here.</a>
+<h3> Addressing Ethical Concerns </h3>
+<b> Does a smaller dataset result in more biased data in the future, especially in the context of language models that make decisions?</b>
+<p> This may be possible. This is why we suggest regular bias audits, especially after the model is engaged: our model uses Google What-If to ensure no bias in its outputs. The model undergoes a natural bias audit every three months. We are familiar with bias being perpetuated by LLMs unwittingly, so our model regularly undergoes bias audits. We suggest you examine all outputs for the model regularly and that the model is manually calibrated during the three-month bias audits. Additionally, we consider performance metrics of our model that can be applied to your model: does your model perform as expected with smaller datasets? Where does it underperform? Precision, recall, and accuracy are all collected metrics. They are always available to view in the sidebar, and should be periodically assessed to ensure they are to standard. Drift detection is also a crucial part of the model, and suggests that the model must be retrained with a more accurate and relevant set of data.</p>
+<b> How does the model interpret and explain what data it chooses as ‘necessary’ and what data it marks as ‘redundant’? Where does the ‘redundant’ data go? </b>
+<p> The model looks at the use frequency, time collected, age, and relevance to current training goals of the data and uses that to determine whether the data considered is redundant. This model is not a black box. It is transparent about what metrics it considers in order to mark data redundant, and all necessary assessments can be found in our extensive user documentation. This data is then removed from the main database and shifted to a backup server, where it can be retrieved, if necessary for future use or audit purposes, for up to a year. After that, all data is automatically deleted in order to optimize space and time. To maintain the privacy and security of the data, we recommend a role-based access system in which only authorized personnel can access the data, which is easily accessible within the framework of the model. </p>
+</body>
+</html>
